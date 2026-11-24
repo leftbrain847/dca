@@ -2,5 +2,5 @@
   "$comment": "Sprint settings for this repo. scripts/snapshot.mjs reads these. Snapshots always go in snapshots/ (the folder the index scans).",
   "project": "DCA Forecast",
   "timeZone": "America/New_York",
-  "public": false
+  "public": true
 }
