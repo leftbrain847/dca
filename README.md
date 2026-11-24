@@ -1,25 +1,27 @@
-# PROJECT_NAME
+# DCA Forecast
 
-One line: what this does and who it's for.
+A phone-first page that shows what steady dollar-cost averaging adds up to (starting balance + a regular contribution + a growth rate over a number of years), and links to the major brokers so you can set up automatic investing there. One self-contained page: no accounts, no data stored, no network calls.
 
 ## Run
 ```
-# exact commands from a clean clone
+npm run build        # writes dist/page.html; open it in a browser
 ```
 
 ## Test
 ```
-# exact test command (CI runs the same thing)
+npm test             # CI runs the same thing
 ```
+
+## Settings
+Everything tunable (defaults, slider ranges, contribution frequencies, rate presets, broker list) is in `src/config.mjs`. Broker links are pinned by `tests/brokers.test.mjs`: https only, an exact allowlisted host, no query or fragment.
 
 ## Deployed
-- Live: (link)
-- Day snapshot: `YYYY-MM-DD - Project` (frozen; never edited)
+- Live: Claude artifact (sprint demo)
+- Day snapshot: `2026-11-23 - DCA Forecast` (frozen; never edited)
 
 ## Ship a sprint day
-Set `project` in `sprint.config.json`, then freeze the day's page:
 ```
-node scripts/snapshot.mjs <page.html>            # private
-node scripts/snapshot.mjs <page.html> --public   # opts in to the public sprint site
+npm run snapshot                                  # builds, then freezes today's page (private)
+node scripts/snapshot.mjs dist/page.html --public # opts in to the public sprint site
 ```
-Commit `snapshots/` to `main` (via PR). The index's nightly refresh logs the day automatically; public pages still have to pass its UAT and secret scan.
+Commit `snapshots/` to `main` (via PR). The index's nightly refresh logs the day automatically.
