@@ -1,0 +1,10 @@
+{
+  "name": "dca",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "snapshot": "node scripts/build.mjs && node scripts/snapshot.mjs dist/page.html"
+  }
+}

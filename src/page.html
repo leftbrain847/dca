@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>__TITLE__</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<header>
+  <h1>DCA Forecast</h1>
+  <p class="sub">Small, steady buys add up. See how much.</p>
+  <nav role="tablist">
+    <button role="tab" data-tab="tab-forecast" aria-selected="true">Forecast</button>
+    <button role="tab" data-tab="tab-brokers" aria-selected="false">Connect to a broker</button>
+  </nav>
+</header>
+
+<main>
+  <section id="tab-forecast" role="tabpanel">
+    <div class="result card">
+      <div class="label">You’d have</div>
+      <div id="out-balance" class="big">$0</div>
+      <p id="out-sentence" class="muted"></p>
+      <div class="split">
+        <div><div class="dot dot-in"></div><span class="label">You put in</span><b id="out-contributed"></b></div>
+        <div><div class="dot dot-growth"></div><span class="label">Growth</span><b id="out-growth"></b></div>
+      </div>
+      <svg id="chart" role="img" aria-label="Balance by year: what you put in versus growth"></svg>
+      <p id="out-crossover" class="callout"></p>
+      <p class="muted small">The habit alone added <b id="out-habit"></b> beyond leaving your starting balance untouched.</p>
+    </div>
+
+    <div class="card inputs">
+      <label>Starting balance<input id="in-start" type="number" inputmode="decimal"></label>
+      <div class="row">
+        <label>Add<input id="in-contribution" type="number" inputmode="decimal"></label>
+        <label>How often<select id="in-frequency"></select></label>
+      </div>
+      <label>Growth rate a year <b id="out-rate"></b><input id="in-rate" type="range"></label>
+      <div id="rate-presets" class="chips"></div>
+      <label>Years <b id="out-years"></b><input id="in-years" type="range"></label>
+      <label class="check"><input id="in-real" type="checkbox"> Show in today’s dollars (after inflation)</label>
+    </div>
+
+    <details class="card">
+      <summary>Year by year</summary>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Year</th><th>Put in</th><th>Growth</th><th>Balance</th></tr></thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section id="tab-brokers" role="tabpanel" hidden>
+    <div class="card">
+      <p id="broker-hint" class="muted"></p>
+      <div id="broker-list"></div>
+      <p id="auto-hint" class="callout"></p>
+      <p class="muted small">These are plain links to each broker’s own website, built into this page. Nothing here asks for or stores a login.</p>
+    </div>
+  </section>
+</main>
+<footer><p id="disclaimer"></p></footer>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>
