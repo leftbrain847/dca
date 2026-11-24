@@ -5,4 +5,4 @@ what: "DCA forecast (start + contribution + growth over years) and links to the 
 next: "Hold the line: daily DCA game on real market history, reusing src/forecast.mjs"              # the next step
 active: true          # true pulls this repo's tasks into J's queue
 public: false         # informational; each sprint day's snapshot decides publishing
-settings_done: false  # J sets the repo settings listed in CLAUDE.md, then this flips to true
+settings_done: true   # J sets the repo settings listed in CLAUDE.md, then this flips to true
